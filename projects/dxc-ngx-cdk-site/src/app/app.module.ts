@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, APP_BASE_HREF, PlatformLocation } from '@angular/common';
-import { ThemeService, DXCHeaderModule,DXCFooterModule, ThemeModule } from '@dxc-technology/halstack-angular';
+import { ThemeService, DXCHeaderModule,DXCFooterModule, ThemeModule, DXCSelectModule } from '@dxc-technology/halstack-angular';
 import { ExampleService } from './service/example.service';
 import { DesignGuidelinesPageComponent } from './pages/design-guidelines-page/design-guidelines-page.component';
 import { AlertModule } from './pages/alert/alert.module';
@@ -45,11 +45,13 @@ import { HeadingModule } from './pages/heading/heading.module';
 import { ScullyLibModule } from '@scullyio/ng-lib-v8';
 import { ComponentsSidenavModule } from './pages/components-sidenav/components-sidenav.module';
 import { AssetsPipeModule } from './pipe/assets.pipe.module';
+import { ReleaseVersionsDropdownComponent } from './components/release-versions-dropdown/release-versions-dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DesignGuidelinesPageComponent
+    DesignGuidelinesPageComponent,
+    ReleaseVersionsDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +100,8 @@ import { AssetsPipeModule } from './pipe/assets.pipe.module';
     ResultsetTableModule,
     ThemeModule,
     ScullyLibModule,
-    AssetsPipeModule
+    AssetsPipeModule,
+    DXCSelectModule
   ],
   providers: [
     { provide: 'ThemeService', useClass: ThemeService },

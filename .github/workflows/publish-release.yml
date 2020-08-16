@@ -51,5 +51,8 @@ jobs:
 
     - name: Move RELEASE docs to S3
       run: node scripts/release-docs.js $TAG_NAME
-      env:
-        TAG_NAME: ${{ github.event.release.tag_name }}
+
+    - name: RELEASE docs to S3 and create versions release file.
+      run: | 
+        node scripts/release-docs.js $TAG_NAME
+        node scripts/release-version-folders.js $TAG_NAME

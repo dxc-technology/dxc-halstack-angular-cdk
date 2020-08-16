@@ -1,0 +1,13 @@
+
+<ng-container *ngIf="currentVersion!==undefined && options.length > 0">
+
+    <dxc-select
+        size = 'small'
+        (onChange)="onUncontrolledChange($event)"
+        label="Version"
+        [options]="options"
+        margin="xxsmall"
+        [value]="currentVersion">
+    </dxc-select>
+</ng-container>
+
